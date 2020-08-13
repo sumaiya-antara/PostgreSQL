@@ -47,11 +47,11 @@ psql
 \c
 
 
-`CREATE TABLE person (
-id INT;
-first_name VARCHAR(50),
-last_name VARCHAR(50),
-email VARCHAR(150) );`
+> CREATE TABLE person (
+> id INT;
+> first_name VARCHAR(50),
+> last_name VARCHAR(50),
+> email VARCHAR(150) );
 
  
  
