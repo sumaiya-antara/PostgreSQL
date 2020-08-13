@@ -3,9 +3,9 @@
 ## What is PostgreSQL
 PostgreSQL, also known as Postgres, is a free and open-source relational database management system emphasizing extensibility and SQL compliance.
 
-Datagrip- paid and powerful
-Postico- free and for mac use
-pgAdmin- for windows and free
+* Datagrip- paid and powerful
+* Postico- free and for mac use
+* pgAdmin- for windows and free
 
 
 *******postgres is the default super user
@@ -46,13 +46,14 @@ psql
 
 \c
 
-CREATE TABLE person (
+
+`CREATE TABLE person (
 id INT;
 first_name VARCHAR(50),
 last_name VARCHAR(50),
-gender VARCHAR(7),
-date_of_birth DATE,
-email VARCHAR(150) );
+email VARCHAR(150) );`
+
+ 
  
 
 \d person
