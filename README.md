@@ -190,8 +190,8 @@ SELECT 'PRESENT' = 'PRESENT';
 SELECT 'PRESENT' = 'PRESENTS';
 ```
 
-http://github.com - automatic!
-[GitHub](http://github.com)
+
+[see more](http://github.com)
 
 
 
