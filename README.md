@@ -134,6 +134,7 @@ date_of_birth DATE NOT NULL,
 email VARCHAR(150) );
 ```
 Then check the table with **\d** command
+![p8](https://user-images.githubusercontent.com/33460747/90296122-86786600-deac-11ea-8c48-63469f84410c.PNG)
 
 ## SELECT Operations:
 The PostgreSQL SELECT statement is used to retrieve records from one or more tables of database and the data is returned in the form of a result table. The SELECT command contains several clauses that we can use to write a query easily. The basic task while performing the SELECT command is to query data from tables within the database. The different clauses of SELECT command are discussed below:
@@ -161,8 +162,9 @@ SELECT * FROM person ORDER BY id ASC;
 We can select separate rows with the help of a DISTINCT operator.
 ```
 SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth;
-SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth DESC;
 ```
+The output:
+![p20](https://user-images.githubusercontent.com/33460747/90296227-bfb0d600-deac-11ea-8b39-637d9a784b55.PNG)
 
 #### WHERE Clause:
 We can filter the rows with the help of the WHERE clause.
@@ -286,7 +288,7 @@ Example:
 SELECT * FROM person WHERE country_of_birth ILIKE 'f%';
 ```
 
-## IN:
+#### IN:
 The PostgreSQL IN condition is used to help reduce the use of multiple OR conditions in a SELECT, INSERT, UPDATE, or DELETE statement.
 ```
 Example:
@@ -294,7 +296,7 @@ SELECT * FROM person WHERE country_of_birth IN ('China', 'France', 'Portugal');
 SELECT * FROM person WHERE country_of_birth IN ('China', 'France', 'Portugal') ORDER BY country_of_birth;
 ```
 
-## BETWEEN:
+#### BETWEEN:
 The PostgreSQL BETWEEN condition is used to retrieve values within a range in a SELECT, INSERT, UPDATE or DELETE statement.
 ```
 Example:
