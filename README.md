@@ -191,7 +191,7 @@ SELECT 'PRESENT' = 'PRESENTS';
 ```
 
 
-[see more](http://github.com)
+
 
 
 
