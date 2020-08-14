@@ -164,6 +164,7 @@ We can select separate rows with the help of a DISTINCT operator.
 SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth;
 ```
 The output:
+
 ![p20](https://user-images.githubusercontent.com/33460747/90296227-bfb0d600-deac-11ea-8b39-637d9a784b55.PNG)
 
 #### WHERE Clause:
@@ -257,6 +258,7 @@ Query:
 SELECT * FROM person WHERE email LIKE '%@jigsy.com';
 ```
 Result:
+
 ![p32](https://user-images.githubusercontent.com/33460747/90294883-5c717480-dea9-11ea-86fb-00e5c1fc8646.PNG)
 
 ```
@@ -264,6 +266,7 @@ Query:
 SELECT * FROM person WHERE email LIKE '%@google.%';
 ```
 Result:
+
 ![p33](https://user-images.githubusercontent.com/33460747/90294923-714e0800-dea9-11ea-98f8-830743165927.PNG)
 
 ```
@@ -271,6 +274,7 @@ Query:
 SELECT * FROM person WHERE email LIKE '______@%';
 ```
 Result:
+
 ![p34](https://user-images.githubusercontent.com/33460747/90294945-7e6af700-dea9-11ea-8a68-335300cf7c0e.PNG)
 
 Some more queries are:
