@@ -190,8 +190,8 @@ SELECT 'PRESENT' = 'PRESENT';
 SELECT 'PRESENT' = 'PRESENTS';
 ```
 
-![GitHub Logo](/D/Postgresql/p1.png)
-Format: ![Alt Text](url)
+http://github.com - automatic!
+[GitHub](http://github.com)
 
 
 
