@@ -249,6 +249,66 @@ SELECT * FROM person WHERE email LIKE '%.com';
 This command will show the below result:
 ![p31](https://user-images.githubusercontent.com/33460747/90294745-fab10a80-dea8-11ea-94c5-405ebb2cc9e8.PNG)
 
+Some more example queries and their outputs are provided below:
+```
+Query:
+SELECT * FROM person WHERE email LIKE '%@jigsy.com';
+```
+Result:
+![p32](https://user-images.githubusercontent.com/33460747/90294883-5c717480-dea9-11ea-86fb-00e5c1fc8646.PNG)
+
+```
+Query:
+SELECT * FROM person WHERE email LIKE '%@google.%';
+```
+Result:
+![p33](https://user-images.githubusercontent.com/33460747/90294923-714e0800-dea9-11ea-98f8-830743165927.PNG)
+
+```
+Query:
+SELECT * FROM person WHERE email LIKE '______@%';
+```
+Result:
+![p34](https://user-images.githubusercontent.com/33460747/90294945-7e6af700-dea9-11ea-8a68-335300cf7c0e.PNG)
+
+Some more queries are:
+```
+SELECT * FROM person WHERE country_of_birth LIKE 'F%';
+
+SELECT * FROM person WHERE country_of_birth LIKE 'f%';
+```
+
+###### Note:
+- LIKE and ILIKE are used for pattern matching in PostgreSQL. LIKE is the SQL standard while ILIKE is a useful extension made by PostgreSQL
+- ILIKE is similar to LIKE in all aspects except in one thing. It performs a case in-sensitive matching.
+```
+Example:
+SELECT * FROM person WHERE country_of_birth ILIKE 'f%';
+```
+
+## IN:
+The PostgreSQL IN condition is used to help reduce the use of multiple OR conditions in a SELECT, INSERT, UPDATE, or DELETE statement.
+```
+Example:
+SELECT * FROM person WHERE country_of_birth IN ('China', 'France', 'Portugal');
+SELECT * FROM person WHERE country_of_birth IN ('China', 'France', 'Portugal') ORDER BY country_of_birth;
+```
+
+## BETWEEN:
+The PostgreSQL BETWEEN condition is used to retrieve values within a range in a SELECT, INSERT, UPDATE or DELETE statement.
+```
+Example:
+SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2020-01-01' AND '2020-06-11';
+```
+This query will show the data of persons who was born between the dates 2020-01-01 and 2020-06-11.
+
+
+
+
+
+
+
+
 
 
 
