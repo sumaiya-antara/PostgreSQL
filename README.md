@@ -29,7 +29,6 @@ WARNING: Console code page (437) differs from Windows code page (1252)
          page "Notes for Windows users" for details.
 Type "help" for help.
 
-postgres=#
 ```
 
 #### Important Notes:
@@ -65,6 +64,7 @@ postgres-# \l
 Example:
 
 DROP DATABASE test;
+```
 
 
 #### Important Notes:
