@@ -8,11 +8,11 @@ This documentation demonstrates the installation of Postgresql on Windows 10 Pro
 ## Step 1: Installation of PostgreSQL on Windows 10 Pro
 At first,download the PostgreSQL from https://www.postgresql.org/. For downloading, follow the below steps:
 
-**1. Go to postgresql.org**
-**1. Click on Download**
-**3. Click on Windows**
-**4. Click on Download the Installer**
-**5. Download the desired version as per your System Type(64 bit or 32 bit)**
+**1.Go to postgresql.org**
+**2.Click on Download**
+**3.Click on Windows**
+**4.Click on Download the Installer**
+**5.Download the desired version as per your System Type(64 bit or 32 bit)**
 
 
 
