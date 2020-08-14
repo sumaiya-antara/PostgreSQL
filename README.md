@@ -8,7 +8,7 @@ This documentation demonstrates the installation of Postgresql on Windows 10 Pro
 ## Installation of PostgreSQL on Windows 10 pro
 At first,download the PostgreSQL from https://www.postgresql.org/. For downloading, follow the below steps:
 
-1. Go to [PostgreSQL](postgresql.org)
+1. Go to [PostgreSQL](www.postgresql.org)
 2. Click on Download
 3. Click on Windows 
 4. Click on Download the Installer 
@@ -242,7 +242,7 @@ The PostgreSQL LIKE operator is used query data using pattern matching technique
 It is important to know that PostgreSQL provides with 2 special wildcard characters for the purpose of patterns matching as below:
 
 - Percent ( %) for matching any sequence of characters
-- Underscore ( _) for matching any single character
+- Underscore ( _ ) for matching any single character
 
 Suppose, we want to find out all the data of person table who has the email id with .com.
 Execute the following command:
