@@ -38,6 +38,28 @@ postgres=#
 
 ## Step 2: Creating Database:
 
+Create a database by simply logging into the superuser **postgres** and writing the following command:
+```
+CREATE DATABASE test
+```
+Check the List of Databases with the command **\l**.
+```
+postgres-# \l
+                                                 List of databases
+   Name    |  Owner   | Encoding |          Collate           |           Ctype            |   Access privileges
+-----------+----------+----------+----------------------------+----------------------------+-----------------------
+ postgres  | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+ template0 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+           |          |          |                            |                            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | English_United States.1252 | English_United States.1252 | =c/postgres          +
+           |          |          |                            |                            | postgres=CTc/postgres
+ test      | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
+(4 rows)
+```
+
+
+
+
 
 
 
