@@ -247,6 +247,7 @@ Execute the following command:
 SELECT * FROM person WHERE email LIKE '%.com';
 ```
 This command will show the below result:
+![p31](https://user-images.githubusercontent.com/33460747/90294745-fab10a80-dea8-11ea-94c5-405ebb2cc9e8.PNG)
 
 
 
