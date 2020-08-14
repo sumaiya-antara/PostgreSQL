@@ -98,6 +98,113 @@ Some of the commonly used constraints in PostgreSQL are:
 
 - EXCLUSION Constraint: The EXCLUDE constraint ensures that if any two rows are compared on the specified column(s) or expression(s) using the specified operator(s), not all of these comparisons will return TRUE.
 
+```
+Example:
+test=# CREATE TABLE people (
+test(# id INT,
+test(# first_name VARCHAR(50),
+test(# last_name VARCHAR(50),
+test(# gender VARCHAR(7),
+test(# date_of_birth DATE,
+test(# email VARCHAR(150) );
+CREATE TABLE
+
+test=#  \d
+              List of relations
+ Schema |     Name      |   Type   |  Owner
+--------+---------------+----------+----------
+ public | ant           | table    | postgres
+ public | faisal        | table    | postgres
+ public | people        | table    | postgres
+ public | person        | table    | postgres
+ public | person_id_seq | sequence | postgres
+ public | tasmi         | table    | postgres
+(6 rows)
+```
+
+## Create Table with Constraint:
+For creating table with constraint, type the following queries in the SQL shell:
+```
+CREATE TABLE person (
+id BIGSERIAL NOT NULL PRIMARY KEY,
+first_name VARCHAR(50) NOT NULL,
+last_name VARCHAR(50) NOT NULL,
+gender VARCHAR(7) NOT NULL,
+date_of_birth DATE NOT NULL,
+email VARCHAR(150) );
+```
+Then check the table with **\d** command
+
+## SELECT Operations:
+The PostgreSQL SELECT statement is used to retrieve records from one or more tables of database and the data is returned in the form of a result table. The SELECT command contains several clauses that we can use to write a query easily. The basic task while performing the SELECT command is to query data from tables within the database. The different clauses of SELECT command are discussed below:
+#### ORDER BY:
+We can sort the rows of tables with the help of the ORDER BY clause.
+
+The data from person table can be sorted according to their country of birth with the following command/query:
+
+```
+SELECT * FROM person ORDER BY country_of_birth;
+```
+The data from person table can be sorted according to their id with the following command/query:
+```
+SELECT * FROM person ORDER BY id;
+```
+The data from any table can be sorted in ascending or descending order with **ASC** or **DSC** at the end of the query.
+```
+Example:
+SELECT * FROM person ORDER BY country_of_birth ASC;
+SELECT * FROM person ORDER BY country_of_birth DESC;
+SELECT * FROM person ORDER BY id ASC;
+```
+
+#### DISTINCT:
+We can select separate rows with the help of a DISTINCT operator.
+```
+SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth;
+SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth DESC;
+```
+
+#### WHERE Clause:
+We can filter the rows with the help of the WHERE clause.
+```
+SELECT * FROM person WHERE gender = 'Female';
+```
+
+#### WHERE and AND Clause:
+We can filter the rows with multiple options by using the WHERE and AND clause.
+```
+SELECT * FROM person WHERE gender = 'Male' AND country_of_birth = 'China';
+SELECT * FROM person WHERE gender = 'Female' AND (country_of_birth = 'China' OR country_of_birth = 'Poland');
+SELECT * FROM person WHERE gender = 'Female' AND (country_of_birth = 'China' OR country_of_birth = 'Poland') AND last_name = 'Pietersma';
+```
+
+#### Comparison:
+We can simply perform comparisons with **>,<,=** opertaors and see the output in true or false.
+```
+SELECT 1>=2;
+SELECT 1=2;
+SELECT 1<=1;
+SELECT 1 <> 2;
+SELECT 'PRESENT' = 'present';
+SELECT 'PRESENT' = 'PRESENT';
+SELECT 'PRESENT' = 'PRESENTS';
+```
+
+![GitHub Logo](/D/Postgresql/p1.png)
+Format: ![Alt Text](url)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
