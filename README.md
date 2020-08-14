@@ -5,7 +5,7 @@ PostgreSQL which is also known as Postgres, is a free and open-source relational
 
 This documentation demonstrates the installation of Postgresql on Windows 10 Pro and instructions for basic database administartion along with mentioning the key basics. The possible problems you can face while executing the administration, will also be mentioned.
 
-## Step 1: Installation of PostgreSQL on Windows 10 pro
+## Installation of PostgreSQL on Windows 10 pro
 At first,download the PostgreSQL from https://www.postgresql.org/. For downloading, follow the below steps:
 
 1. Go to postgresql.org
@@ -36,13 +36,16 @@ postgres=#
 - The default Superuser for PostgreSQL is **postgres**
 - The defualt port for PostgreSQL is **5432**
 
-## Step 2: Creating Database:
+## Creating Database:
 
-Create a database by simply logging into the superuser **postgres** and writing the following command:
+- Create a database by simply logging into the superuser **postgres** and writing the query **CREATE DATABASE database_name;** (put the name of the database in the database_name section and put a semicolon (;) at the end of the command for must.
 ```
-CREATE DATABASE test
+Example:
+
+CREATE DATABASE test;
 ```
-Check the List of Databases with the command **\l**.
+
+- Check the List of Databases with the command **\l**
 ```
 postgres-# \l
                                                  List of databases
@@ -56,6 +59,45 @@ postgres-# \l
  test      | postgres | UTF8     | English_United States.1252 | English_United States.1252 |
 (4 rows)
 ```
+
+- A whole Database can be deleted with DROP command.
+```
+Example:
+
+DROP DATABASE test;
+
+
+#### Important Notes:
+- UPPERCASE letters and LOWERCASE letters both can be used while writing database queries
+- Putting semicolon (;)  at the end of the query is a must. Otherwise, the query will not be executed
+- BEAWARE before executing any DROP query because it will delee the database forever
+
+
+## Connect to Database:
+To connect with any database, start with writing **\c** and then write the database name.
+
+```
+Example:
+postgres-# \c test
+You are now connected to database "test" as user "postgres".
+```
+
+## Create Table without Constraint:
+Constraints are the rules enforced on data columns on table and these are used to prevent invalid data from being entered into the database. This ensures the accuracy and reliability of the data in the database.
+Some of the commonly used constraints in PostgreSQL are:
+
+- NOT NULL Constraint: Ensures that a column cannot have a NULL value.
+
+- UNIQUE Constraint: Ensures that all values in a column are different.
+
+- PRIMARY Key: Uniquely identifies each row/record in a database table.
+
+- FOREIGN Key: Constrains data based on columns in other tables.
+
+- CHECK Constraint: The CHECK constraint ensures that all values in a column satisfy certain conditions.
+
+- EXCLUSION Constraint: The EXCLUDE constraint ensures that if any two rows are compared on the specified column(s) or expression(s) using the specified operator(s), not all of these comparisons will return TRUE.
+
 
 
 
