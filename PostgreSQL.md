@@ -121,6 +121,9 @@ test=#  \d
  public | tasmi         | table    | postgres
 (6 rows)
 ```
+#### Important Note:
+Provide the value/select the value for DATE variable in the **yyyy-mm-dd format**. Otherwise, the oprations may fail showing the following errors:
+![error](https://user-images.githubusercontent.com/33460747/90296988-fc7dcc80-deae-11ea-86f0-159f5ba735ca.PNG)
 
 ## Create Table with Constraint:
 For creating table with constraint, type the following queries in the SQL shell:
@@ -202,6 +205,11 @@ VALUES ('Anne', 'Smith', 'FEMALE', date '1988-01-09');
 INSERT INTO person (first_name, last_name, gender, date_of_birth, email)
 VALUES ('Jake', 'Gillenhal', 'MALE', date '1982-05-23', 'jake@gmail.com');
 ```
+
+![p9](https://user-images.githubusercontent.com/33460747/90297086-38b12d00-deaf-11ea-90ec-d1819dbc07c0.PNG)
+![p10](https://user-images.githubusercontent.com/33460747/90297089-3949c380-deaf-11ea-80b3-b91ff5fa35d4.PNG)
+![p11](https://user-images.githubusercontent.com/33460747/90297090-39e25a00-deaf-11ea-9f74-0dd99f7a92d9.PNG)
+
 ###### Important Notes:
 We can generate data by using mockaroo data generator for performing and checking the database queries. We need a large number of data for performing the database quieries and it is a lengthy process to insert data one by one and then test those with quiery. Go to [mockaroo](https://www.mockaroo.com/) for generating your data and the download the .sql file. Open the file using any code editor like Atom, Sublime, VSCODE etc.
 
