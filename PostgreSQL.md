@@ -122,7 +122,7 @@ test=#  \d
 (6 rows)
 ```
 #### Important Note:
-Provide the value/select the value for DATE variable in the **yyyy-mm-dd format**. Otherwise, the oprations may fail showing the following errors:
+Provide the value/select the value for DATE variable in the **yyyy-mm-dd** format. Otherwise, the operations may fail showing the following errors:
 ![error](https://user-images.githubusercontent.com/33460747/90296988-fc7dcc80-deae-11ea-86f0-159f5ba735ca.PNG)
 
 ## Create Table with Constraint:
