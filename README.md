@@ -190,7 +190,69 @@ SELECT 'PRESENT' = 'PRESENT';
 SELECT 'PRESENT' = 'PRESENTS';
 ```
 
-![P13](https://user-images.githubusercontent.com/33460747/90282995-3344ea00-de91-11ea-903e-bcf4f143cf18.PNG)
+#### INSERT INTO:
+For inserting data into any table, use the INSERT INTO clause. Follow the below example:
+```
+INSERT INTO person (first_name, last_name, gender, date_of_birth)
+VALUES ('Anne', 'Smith', 'FEMALE', date '1988-01-09');
+
+INSERT INTO person (first_name, last_name, gender, date_of_birth, email)
+VALUES ('Jake', 'Gillenhal', 'MALE', date '1982-05-23', 'jake@gmail.com');
+```
+###### Important Notes:
+We can generate data by using mockaroo data generator for performing and checking the database queries. We need a large number of data for performing the database quieries and it is a lengthy process to insert data one by one and then test those with quiery. Go to [mockaroo](https://www.mockaroo.com/) for generating your data and the download the .sql file. Open the file using any code editor like Atom, Sublime, VSCODE etc.
+
+Insert the file's data to the table by executing commands like this:
+```
+test=# \i /Users/ttsta/Downloads/person.sql
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+INSERT 0 1
+.
+.
+.
+```
+
+
+#### LIMIT, OFFSET and FETCH:
+We can view a fixed limited number of data from the table by using LIMIT operation.
+```
+SELECT * FROM person LIMIT 15;
+```
+The above command will display the first 15 data from the table. For viewing data from a specific number with a limit, use the OFFSET operation.
+Follow the below command for this:
+```
+SELECT * FROM person OFFSET 15 LIMIT 15;
+```
+We can also use the OFFSET command for viewing the rest of the data from a specific serial.
+```
+SELECT * FROM person OFFSET 15;
+```
+The FETCH operation can be used instead of LIMIT for displaying data from a specific serial.
+```
+SELECT * FROM person OFFSET 15 FETCH FIRST 13 ROW ONLY;
+```
+
+#### LIKE and ILIKE:
+The PostgreSQL LIKE operator is used query data using pattern matching techniques. Its result include strings that are case-sensitive and follow the mentioned pattern.
+It is important to know that PostgreSQL provides with 2 special wildcard characters for the purpose of patterns matching as below:
+
+- Percent ( %) for matching any sequence of characters
+- Underscore ( _) for matching any single character
+
+Suppose, we want to find out all the data of person table who has the email id with .com.
+Execute the following command:
+```
+SELECT * FROM person WHERE email LIKE '%.com';
+```
+This command will show the below result:
+
+
+
+
+
+
 
 
 
