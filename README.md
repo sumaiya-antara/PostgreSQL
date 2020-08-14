@@ -190,7 +190,7 @@ SELECT 'PRESENT' = 'PRESENT';
 SELECT 'PRESENT' = 'PRESENTS';
 ```
 
-
+![P13](https://user-images.githubusercontent.com/33460747/90282995-3344ea00-de91-11ea-903e-bcf4f143cf18.PNG)
 
 
 
