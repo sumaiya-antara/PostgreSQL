@@ -326,6 +326,8 @@ This command will display country names with the number of person from each of t
 
 The Output:
 
+![group by](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/group%20by.PNG)
+
 
 
 ```
@@ -335,7 +337,10 @@ SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth ORDER BY
 This command will display country names along with total number of persons from those in an order.
 
 
-PostgreSQL/group by.PNG
+
+
+
+
 
 
 
