@@ -317,6 +317,25 @@ SELECT * FROM person WHERE date_of_birth BETWEEN DATE '2020-01-01' AND '2020-06-
 This query will show the data of persons who was born between the dates 2020-01-01 and 2020-06-11.
 
 
+#### GROUP BY:
+The GROUP BY clause allows to group our data based on column. For example, we want to see the number of persons from each country from the **person** table. Execute the following queries for this operation:
+```
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth;
+```
+This command will display country names with the number of person from each of those countries.
+
+The Output:
+
+
+
+```
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth ORDER BY country_of_birth;
+```
+
+This command will display country names along with total number of persons from those in an order.
+
+
+PostgreSQL/group by.PNG
 
 
 
