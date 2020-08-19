@@ -336,6 +336,137 @@ SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth ORDER BY
 
 This command will display country names along with total number of persons from those in an order.
 
+The Output:
+
+![group by](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/group%20by2.PNG)
+
+
+## GROUP BY HAVING:
+The **GROUP BY HAVING** clause allows to do an extra filtering after we perform the aggregation(such as **count**). The **HAVING** keyword works with **GROUP BY**. Suppose, we need to find out the country names having at least/at most 5 people and number of people from those countries in the table. Then we will perform the following queries:
+
+```
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) <3 ORDER BY country_of_birth;
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) >50 ORDER BY country_of_birth;
+SELECT country_of_birth, COUNT(*) FROM person GROUP BY country_of_birth HAVING COUNT(*) >=100 ORDER BY country_of_birth;
+```
+
+OUTPUTS:
+
+![group by having](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/group%20by%20having.PNG)
+![group by having 2](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/group%20by%20having%202.PNG)
+
+
+###### NOTES: 
+- You must place the **HAVING** keyword before **ORDER BY**.
+- **COUNT(*)** is an aggregate function. 
+An aggregate function performs a calculation on a set of values, and returns a single value. Except for COUNT(*), aggregate functions ignore null values. Aggregate functions are often used with the **GROUP BY** clause of the **SELECT** statement.
+Use aggregate functions as expressions only in the following situations:
+
+- The select list of a SELECT statement (either a subquery or an outer query).
+- A HAVING clause.
+
+Transact-SQL provides the following aggregate functions:
+
+APPROX_COUNT_DISTINCT
+AVG
+CHECKSUM_AGG
+COUNT
+COUNT_BIG
+GROUPING
+GROUPING_ID
+MAX
+MIN
+STDEV
+STDEVP
+STRING_AGG
+SUM
+VAR
+VARP
+
+
+
+## Calculating MAX,MIN and AVERAGE:
+Suppose we have another table named car in the test database and this table has id, make, model, price columns.
+If we want to see the Maximum, Minimum and Average price of the cars in the table, let's perform the following queries.
+
+```
+SELECT MAX(price) FROM car;
+SELECT MIN(price) FROM car;
+SELECT AVG(price) FROM car;
+SELECT ROUND(AVG(price)) FROM car;
+SELECT make,model, MIN(PRICE) FROM car GROUP BY make,model;
+SELECT make,MAX(PRICE) FROM car GROUP BY make;
+SELECT make,AVG(PRICE) FROM car GROUP BY make;
+SELECT make,ROUND(AVG(PRICE)) FROM car GROUP BY make;
+```
+OUTPUTS:
+
+![mmma1](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/mma1.PNG)
+![mmma1](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/mma2.PNG)
+![mmma1](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/mma3.PNG)
+![mmma1](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/mma4.PNG)
+
+
+###### NOTE:
+The PostgreSQL ROUND() function rounds a numeric value to its nearest integer or a number with the number of decimal places.
+
+
+## SUM:
+```
+SELECT SUM(price) FROM car;
+SELECT make, model, SUM(price) FROM car GROUP BY make, model;
+```
+
+This query will show the total price of all the cars of each model from every brand.
+
+
+## Basic Arithmetic Operators:
+```
+SELECT 10 + 2;
+SELECT 25 - 14;
+SELECT 8 * 4;
+SELECT 55 / 11;
+SELECT 5 ^ 3;
+SELECT 6!;
+SELECT 20 % 7;
+```
+## Arithmetic Operator ROUND:
+Suppose, 10% discount is going on for the cars.Let's view the discount amount and the discounted price of each cars in the car table.
+```
+SELECT id, make, model, price, price * .10 FROM car;
+SELECT id, make, model, price, ROUND(price * .10) FROM car;
+```
+
+-This command will display the discount amount of each car models in the round column.
+
+SELECT id, make, model, price, ROUND(price * .10, 2) FROM car;
+
+-This query will show 2 digited decimal number of the discount amount.
+
+SELECT id, make, model, price, ROUND(price * .10, 2), ROUND(price - (price * 0.10), 2) FROM car;
+
+- This query will show the discounted price of each car models along with discount amount and the original price of the cars.
+
+
+****ALIAS:
+
+If we do not specify the column name in PostgreSQL, the function name will displayed as the column name. We need use Alias to specify a column name. We simply need to use the AS keyword and then the column_name. For the previous query, let's perform the following actions:
+
+SELECT id, make, model, price AS original_price, ROUND(price * .10, 2) AS discount_amount_for_ten_percent, ROUND(price - (price * 0.10), 2) AS price_after_ten_percent_discount FROM car;
+
+
+*******COALESCE:
+The COALESCE function accepts an unlimited number of arguments. It returns the first argument that is not null. If all arguments are null, the COALESCE function will return null.
+
+Suppose, there is another table named person2 in my database test and many of the persons do not have email address. Let's see what COALESCE function does in this scenario.
+
+SELECT COALESCE(email) FROM person2;
+
+- The output of this query is showing the NOT NULL values (email addresses) from the email column. But, the default NULL values are aslso being printed as blank.
+Let's print this default NULL values with a string.
+
+SELECT COALESCE(email, '***EMAIL NOT PROVIDED***') FROM person2;
+
 
 
 
