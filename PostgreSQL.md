@@ -123,6 +123,7 @@ test=#  \d
 ```
 #### Important Note:
 Provide the value/select the value for DATE variable in the **yyyy-mm-dd** format. Otherwise, the operations may fail showing the following errors:
+
 ![error](https://user-images.githubusercontent.com/33460747/90296988-fc7dcc80-deae-11ea-86f0-159f5ba735ca.PNG)
 
 ## Create Table with Constraint:
@@ -418,6 +419,9 @@ SELECT make, model, SUM(price) FROM car GROUP BY make, model;
 ```
 
 This query will show the total price of all the cars of each model from every brand.
+
+![sum1](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/Sum1.PNG)
+![sum2](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/sum2.PNG)
 
 
 ## Basic Arithmetic Operators:
