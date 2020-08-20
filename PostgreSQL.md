@@ -437,35 +437,65 @@ SELECT id, make, model, price, price * .10 FROM car;
 SELECT id, make, model, price, ROUND(price * .10) FROM car;
 ```
 
--This command will display the discount amount of each car models in the round column.
+This command will display the discount amount of each car models in the round column.
 
+![round1](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/arround1.PNG)
+![round2](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/arround2.PNG)
+
+```
 SELECT id, make, model, price, ROUND(price * .10, 2) FROM car;
+```
+This query will show 2 digited decimal number of the discount amount.
 
--This query will show 2 digited decimal number of the discount amount.
+![round3](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/arround3.PNG)
 
+```
 SELECT id, make, model, price, ROUND(price * .10, 2), ROUND(price - (price * 0.10), 2) FROM car;
+```
+This query will show the discounted price of each car models along with discount amount and the original price of the cars.
 
-- This query will show the discounted price of each car models along with discount amount and the original price of the cars.
+![round4](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/arround4.PNG)
 
 
-****ALIAS:
+
+
+## ALIAS:
 
 If we do not specify the column name in PostgreSQL, the function name will displayed as the column name. We need use Alias to specify a column name. We simply need to use the AS keyword and then the column_name. For the previous query, let's perform the following actions:
 
+```
 SELECT id, make, model, price AS original_price, ROUND(price * .10, 2) AS discount_amount_for_ten_percent, ROUND(price - (price * 0.10), 2) AS price_after_ten_percent_discount FROM car;
+```
+Output:
+
+![alias](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/alias1.PNG)
 
 
-*******COALESCE:
+## COALESCE:
 The COALESCE function accepts an unlimited number of arguments. It returns the first argument that is not null. If all arguments are null, the COALESCE function will return null.
 
 Suppose, there is another table named person2 in my database test and many of the persons do not have email address. Let's see what COALESCE function does in this scenario.
 
+```
 SELECT COALESCE(email) FROM person2;
+```
+Output:
 
-- The output of this query is showing the NOT NULL values (email addresses) from the email column. But, the default NULL values are aslso being printed as blank.
+![coalesce](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/coalesce1.PNG)
+
+
+The output of this query is showing the NOT NULL values (email addresses) from the email column. But, the default NULL values are aslso being printed as blank.
 Let's print this default NULL values with a string.
 
+```
 SELECT COALESCE(email, '***EMAIL NOT PROVIDED***') FROM person2;
+```
+
+Output:
+
+![c2](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/coalesce2.PNG)
+
+
 
 
 
