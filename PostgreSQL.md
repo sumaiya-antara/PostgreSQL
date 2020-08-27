@@ -499,6 +499,26 @@ Output:
 
 ![c2](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/coalesce2.PNG)
 
+## NULLIF:
+The NULLIF function returns NULL if and only if value1 and value2 are equal. Otherwise it returns value1. This can be used to perform the inverse operation of the COALESCE example given above.
+PostgreSQL nullif is a common conditional expression used to handle null values or expressions in PostgreSQL. nullif also used with the coalesce function to handle the null values. PostgreSQL nullif function returns a null value if provided expressions are equal. If two expressions provided are equal then it provides null value as a result otherwise it will return the first expression as a result.
+
+```
+SELECT NULLIF(20 , 5);
+SELECT NULLIF(20 , 20);
+SELECT NULLIF(2 , 8);
+SELECT 10 / NULLIF(2 , 6);
+SELECT COALESCE(10 / NULLIF(0 , 0),0);
+```
+It will print the output 0.
+
+```
+SELECT first_name, last_name, COALESCE(email , 'NOT FOUND') AS email FROM person2;
+```
+OUTPUT:
+
+![NULLIF](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/nullif1.PNG)
+
 
 
 
