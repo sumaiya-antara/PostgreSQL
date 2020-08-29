@@ -163,7 +163,7 @@ SELECT * FROM person ORDER BY id ASC;
 ```
 
 #### DISTINCT:
-We can select separate rows with the help of a DISTINCT operator.
+We can select separate columns specifically with the help of a DISTINCT operator. The following command will show the data of a single column only-
 ```
 SELECT DISTINCT country_of_birth FROM person ORDER BY country_of_birth;
 ```
