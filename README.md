@@ -368,21 +368,20 @@ Use aggregate functions as expressions only in the following situations:
 
 Transact-SQL provides the following aggregate functions:
 
-APPROX_COUNT_DISTINCT
-AVG
-CHECKSUM_AGG
-COUNT
-COUNT_BIG
-GROUPING
-GROUPING_ID
-MAX
-MIN
-STDEV
-STDEVP
-STRING_AGG
-SUM
-VAR
-VARP
+- APPROX_COUNT_DISTINCT
+- AVG
+- CHECKSUM_AGG
+- COUNT
+- COUNT_BIG
+- GROUPING
+- GROUPING_ID
+- MAX
+- MIN
+- STDEVP
+- STRING_AGG
+- SUM
+- VAR
+- VARP
 
 
 
@@ -518,6 +517,24 @@ SELECT first_name, last_name, COALESCE(email , 'NOT FOUND') AS email FROM person
 OUTPUT:
 
 ![NULLIF](https://github.com/sumaiya-antara/PostgreSQL/blob/master/PostgreSQL/nullif1.PNG)
+
+
+## :
+```
+SELECT NOW();
+SELECT NOW()::DATE;
+SELECT NOW()::TIME;
+```
+
+## Adding and Subtracting with Dates:
+```
+SELECT NOW() - INTERVAL '2 YEARS';
+SELECT NOW() - INTERVAL '7 MONTHS';
+SELECT NOW() - INTERVAL '7 DAYS';
+SELECT NOW() + INTERVAL '7 DAYS';
+SELECT NOW()::DATE + INTERVAL '8 MONTHS';
+SELECT (NOW()::DATE + INTERVAL '8 MONTHS')::DATE;
+```
 
 
 
